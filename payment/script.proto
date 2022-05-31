@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package script;
+
+message OrderPaymentPayload {
+    string customerId = 1;
+    string orderId = 2;
+    string amount = 3;
+}
+
+service OrderPaymentService {
+    rpc CreateOrderPayment (OrderPaymentRequest) returns (OrderPaymentResponse) {}
+}
+
+message OrderPaymentRequest {
+    string customerId = 1;
+    string orderId = 2;
+    string amount = 3;
+}
+
+message OrderPaymentResponse {
+    string status = 1;
+    string message = 2;
+}
