@@ -30,6 +30,7 @@ class IndexController {
    * @param res any
    */
   async processPayment(req: express.Request, res: express.Response) {
+    await paymentService.update(req.params.id, { status: 'Completed' });
     const payment = await paymentService.getById(req.params.id);
     res.status(200).json({ result: payment });
   }

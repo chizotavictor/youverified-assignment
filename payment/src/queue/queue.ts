@@ -35,6 +35,7 @@ class QueueService {
             customerId: data.customerid,
             orderId: data.orderid,
             amount: data.amount,
+            status: 'Pending',
           });
           // Acknowledge the message
           channel.ack(msg);

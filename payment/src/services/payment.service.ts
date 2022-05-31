@@ -16,6 +16,10 @@ class PaymentService {
   async getAll() {
     return await PaymentModel.find({});
   }
+
+  async update(id, payload: any) {
+    return await PaymentModel.updateOne({ _id: id }, payload);
+  }
 }
 
 export default new PaymentService();

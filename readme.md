@@ -1,4 +1,4 @@
-# Youverified Microservice Assignment
+# Youverify Microservice Assignment
 
 ## This is an implementation of microservice architecture consisting different services.
 
