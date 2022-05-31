@@ -17,6 +17,10 @@ class OrderService {
     return await OrderModel.find({});
   }
 
+  async update(id, payload: any) {
+    return await OrderModel.updateOne({ _id: id }, payload);
+  }
+
   async isExists(id: any) {
     const item = await this.getById(id);
     // eslint-disable-next-line no-unneeded-ternary

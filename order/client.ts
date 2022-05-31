@@ -3,6 +3,7 @@ import * as grpc from 'grpc';
 import dotenv from 'dotenv-safe';
 import { OrderPaymentRequest, OrderPaymentResponse } from './script_pb';
 import { OrderPaymentServiceClient } from './script_grpc_pb';
+import OrderService from './src/services/order.service';
 
 dotenv.config({
   allowEmptyValues: true,
@@ -23,6 +24,7 @@ export default function GrpcCreateOrderPayment(customerId: string, orderId: stri
       console.error(err);
       return;
     }
+    OrderService.update(orderId, { orderStatus: 'Completed' });
     console.log(response.array);
   });
 }
